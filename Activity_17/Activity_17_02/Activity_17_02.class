@@ -1,0 +1,35 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Activity_17_02 {
+    public Activity_17_02() {
+    }
+
+    public static void main(String[] var0) throws IOException {
+        FileOutputStream var1 = new FileOutputStream("Activity17_02.dat", true);
+        Throwable var2 = null;
+
+        try {
+            for(int var3 = 0; var3 < 100; ++var3) {
+                var1.write((int)(1.0 + Math.random() * 100.0));
+            }
+        } catch (Throwable var11) {
+            var2 = var11;
+            throw var11;
+        } finally {
+            if (var1 != null) {
+                if (var2 != null) {
+                    try {
+                        var1.close();
+                    } catch (Throwable var10) {
+                        var2.addSuppressed(var10);
+                    }
+                } else {
+                    var1.close();
+                }
+            }
+
+        }
+
+    }
+}

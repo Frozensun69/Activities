@@ -1,0 +1,76 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Activity_17_01 {
+    public Activity_17_01() {
+    }
+
+    public static void main(String[] var0) throws FileNotFoundException {
+        ArrayList var1 = new ArrayList();
+        File var2 = new File("Activity_17_01.txt");
+        Throwable var4;
+        if (var2.exists()) {
+            Scanner var3 = new Scanner(var2);
+            var4 = null;
+
+            try {
+                while(var3.hasNext()) {
+                    var1.add(var3.nextLine());
+                }
+            } catch (Throwable var29) {
+                var4 = var29;
+                throw var29;
+            } finally {
+                if (var3 != null) {
+                    if (var4 != null) {
+                        try {
+                            var3.close();
+                        } catch (Throwable var26) {
+                            var4.addSuppressed(var26);
+                        }
+                    } else {
+                        var3.close();
+                    }
+                }
+
+            }
+        }
+
+        for(int var31 = 0; var31 < 100; ++var31) {
+            var1.add((int)(Math.random() * 100.0) + " ");
+        }
+
+        PrintWriter var32 = new PrintWriter(var2);
+        var4 = null;
+
+        try {
+            Iterator var5 = var1.iterator();
+
+            while(var5.hasNext()) {
+                String var6 = (String)var5.next();
+                var32.print(var6);
+            }
+        } catch (Throwable var27) {
+            var4 = var27;
+            throw var27;
+        } finally {
+            if (var32 != null) {
+                if (var4 != null) {
+                    try {
+                        var32.close();
+                    } catch (Throwable var25) {
+                        var4.addSuppressed(var25);
+                    }
+                } else {
+                    var32.close();
+                }
+            }
+
+        }
+
+    }
+}
