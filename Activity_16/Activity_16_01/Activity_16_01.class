@@ -1,0 +1,88 @@
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+public class Activity_16_01 extends Application {
+    protected Text text = new Text(50.0, 50.0, "Programming is fun");
+
+    public Activity_16_01() {
+    }
+
+    public void start(Stage var1) {
+        HBox var2 = new HBox(20.0);
+        Button var3 = new Button("<=");
+        Button var4 = new Button("=>");
+        var2.getChildren().addAll(new Node[]{var3, var4});
+        var2.setAlignment(Pos.CENTER);
+        BorderPane var5 = new BorderPane();
+        var5.setBottom(var2);
+        HBox var6 = new HBox(20.0);
+        RadioButton var7 = new RadioButton("Red");
+        RadioButton var8 = new RadioButton("Yellow");
+        RadioButton var9 = new RadioButton("Black");
+        RadioButton var10 = new RadioButton("Orange");
+        RadioButton var11 = new RadioButton("Green");
+        var6.getChildren().addAll(new Node[]{var7, var8, var9, var10, var11});
+        ToggleGroup var12 = new ToggleGroup();
+        var7.setToggleGroup(var12);
+        var8.setToggleGroup(var12);
+        var9.setToggleGroup(var12);
+        var10.setToggleGroup(var12);
+        var11.setToggleGroup(var12);
+        Pane var13 = new Pane();
+        var13.setStyle("-fx-border-color: black");
+        var13.getChildren().add(this.text);
+        var5.setCenter(var13);
+        var5.setTop(var6);
+        var3.setOnAction((var1x) -> {
+            this.text.setX(this.text.getX() - 10.0);
+        });
+        var4.setOnAction((var1x) -> {
+            this.text.setX(this.text.getX() + 10.0);
+        });
+        var7.setOnAction((var2x) -> {
+            if (var7.isSelected()) {
+                this.text.setFill(Color.RED);
+            }
+
+        });
+        var8.setOnAction((var2x) -> {
+            if (var8.isSelected()) {
+                this.text.setFill(Color.YELLOW);
+            }
+
+        });
+        var9.setOnAction((var2x) -> {
+            if (var9.isSelected()) {
+                this.text.setFill(Color.BLACK);
+            }
+
+        });
+        var10.setOnAction((var2x) -> {
+            if (var10.isSelected()) {
+                this.text.setFill(Color.ORANGE);
+            }
+
+        });
+        var11.setOnAction((var2x) -> {
+            if (var11.isSelected()) {
+                this.text.setFill(Color.GREEN);
+            }
+
+        });
+        Scene var14 = new Scene(var5, 450.0, 150.0);
+        var1.setTitle("Exercise_16_01");
+        var1.setScene(var14);
+        var1.show();
+    }
+}
