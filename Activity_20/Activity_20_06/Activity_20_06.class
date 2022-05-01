@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class Activity_20_06 {
+    public Activity_20_06() {
+    }
+
+    public static void main(String[] var0) {
+        ArrayList var1 = new ArrayList();
+
+        for(int var2 = 0; var2 < 5000000; ++var2) {
+            var1.add(var2);
+        }
+
+        LinkedList var13 = new LinkedList(var1);
+        long var3 = System.currentTimeMillis();
+        ListIterator var5 = var13.listIterator();
+
+        while(var5.hasNext()) {
+            var5.next();
+        }
+
+        long var6 = System.currentTimeMillis();
+        System.out.println("Time to traverse the list using an iterator :" + (var6 - var3) + " millis");
+        long var8 = System.currentTimeMillis();
+
+        for(int var10 = 0; var10 < 5000000; ++var10) {
+            var13.get(var10);
+        }
+
+        long var12 = System.currentTimeMillis();
+        System.out.println("Time to traverse the list using the get(index) method :" + (var12 - var8) + " millis");
+    }
+}
