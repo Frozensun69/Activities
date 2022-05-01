@@ -1,27 +1,11 @@
-/*******************************************************************
-*                        Employee                                  *
-*------------------------------------------------------------------*
-* -office: int                                                     *
-* -salary: double                                                  *
-* -dateHired: MyDate                                               *
-* +Employee(name: String, address: String, phone: String,          *
-*  email: String, office: int, salary: double, dateHired: MyDate); *
-* +getOffice(): int                                                *
-* +getSalary(): double                                             *
-* +getDateHired(): MyDate                                          *
-* +setOffice(office: int): void                                    *
-* +setSalary(salary: double): void                                 *
-* +setDateHired(dateHired: MyDate): void                           *
-* +toString():String                                               *
-*******************************************************************/
-// Implement Employee class
+
 public class Employee
 		extends Person {
 	private int office;
 	private double salary;
 	private MyDate dateHired;
 
-	/** Construct Employee object */
+	/**  Employee object */
 	public Employee(String name, String address, String phone, 
 		String email, int office, double salary) {
 		super(name, address, phone, email);
