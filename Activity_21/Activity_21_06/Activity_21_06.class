@@ -1,0 +1,41 @@
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Activity_21_06 {
+    public Activity_21_06() {
+    }
+
+    public static void main(String[] var0) {
+        Scanner var1 = new Scanner(System.in);
+        HashMap var2 = new HashMap();
+        System.out.println("Enter a number of integers.\nInput ends when the input is 0:");
+
+        int var3;
+        int var4;
+        while((var3 = var1.nextInt()) != 0) {
+            if (!var2.containsKey(var3)) {
+                var2.put(var3, 1);
+            } else {
+                var4 = (Integer)var2.get(var3);
+                ++var4;
+                var2.put(var3, var4);
+            }
+        }
+
+        var4 = (Integer)Collections.max(var2.values());
+        System.out.print("The most occurrences integers are: ");
+        Iterator var5 = var2.entrySet().iterator();
+
+        while(var5.hasNext()) {
+            Map.Entry var6 = (Map.Entry)var5.next();
+            if ((Integer)var6.getValue() == var4) {
+                System.out.print(var6.getKey() + " ");
+            }
+        }
+
+        System.out.println();
+    }
+}
