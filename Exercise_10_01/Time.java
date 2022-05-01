@@ -1,22 +1,8 @@
-                   //UML diagram
-/************************************************
-*                      Time                     *
-*-----------------------------------------------*
-* -hour: long                                   *
-* -minute: long                                 *
-* -second: long                                 *
-* Time()                                        *
-* Time(elapseTime: long)                        *
-* Time(hour: long, minute: long, second: long)  *
-* getHour(): long                               *
-* getMinute(): long                             *
-* getSecond(): long                             *
-* setTime(elapseTime: long)                     *
-************************************************/
 
-// Implement Time class
+
+
 public class Time {
-	// Data fields
+	// Datas
 	private long hour;
 	private long minute;
 	private long second;
