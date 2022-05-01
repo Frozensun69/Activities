@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 
-public class Exercise_14_06 extends Application {
+public class Activity_14_06 extends Application {
 	@Override 
 	public void start(Stage primaryStage) {
 		
@@ -28,7 +28,7 @@ public class Exercise_14_06 extends Application {
 
 		
 		Scene scene = new Scene (pane);
-		primaryStage.setTitle("Exercise_14_06"); // Set the stage title
+		primaryStage.setTitle("Activity_14_06"); // Set the stage title
 		primaryStage.setScene(scene); // Place in scene in the stage
 		primaryStage.show(); // Display the stage;
 	}
