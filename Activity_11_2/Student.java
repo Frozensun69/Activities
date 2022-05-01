@@ -1,15 +1,4 @@
-/*************************************************
-*                   Student                      *
-*------------------------------------------------*
-* -status: String                                *
-* ---------------                                *
-* +Student(name: String, address: String,        *
-*  phone: String, email: String, status: String) *
-* +getStatus(): String                           *
-* +setStatus(status: String): void               *
-* +toString(): String                            *
-*************************************************/
-// Implement Student class
+
 public class Student
 		extends Person {
 	private int status;
@@ -24,12 +13,12 @@ public class Student
 		this.status = status;
 	}
 
-	/** Set new status */
+
 	public void setStatus(int status) {
 		this.status = status; 
 	}
 
-	/** Return status */
+	
 	public String getStatus() {
 		switch (status) {
 			case 1 : return "freshman"; 
@@ -40,7 +29,6 @@ public class Student
 		}
 	}
 
-	/** Return a string discription of the class */
 	public String toString() {
 		return super.toString() + "\nStatus: " + getStatus();
 	}
