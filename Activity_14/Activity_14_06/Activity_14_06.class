@@ -1,0 +1,36 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+public class Activity_14_06 extends Application {
+    public Activity_14_06() {
+    }
+
+    public void start(Stage var1) {
+        GridPane var2 = new GridPane();
+        int var3 = 0;
+        double var4 = 100.0;
+
+        for(int var6 = 0; var6 < 8; ++var6) {
+            ++var3;
+
+            for(int var7 = 0; var7 < 8; ++var7) {
+                Rectangle var8 = new Rectangle(var4, var4, var4, var4);
+                if (var3 % 2 == 0) {
+                    var8.setFill(Color.WHITE);
+                }
+
+                var2.add(var8, var7, var6);
+                ++var3;
+            }
+        }
+
+        Scene var9 = new Scene(var2);
+        var1.setTitle("Exercise_14_06");
+        var1.setScene(var9);
+        var1.show();
+    }
+}
