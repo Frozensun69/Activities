@@ -1,5 +1,5 @@
 
-public class Exercise_11_02 {
+public class Activity_11_02 {
 	
 	public static void main(String[] args) {
 		// Create a Person, Student, Employee, Faculty, and Staff objects
