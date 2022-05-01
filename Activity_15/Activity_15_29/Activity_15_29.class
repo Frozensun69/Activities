@@ -1,0 +1,32 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
+
+public class Exercise_15_29 extends Application {
+    public Exercise_15_29() {
+    }
+
+    public void start(Stage var1) {
+        CarPane var2 = new CarPane();
+        var2.setOnMousePressed((var1x) -> {
+            var2.pause();
+        });
+        var2.setOnMouseReleased((var1x) -> {
+            var2.play();
+        });
+        var2.setOnKeyPressed((var1x) -> {
+            if (var1x.getCode() == KeyCode.UP) {
+                var2.increaseSpeed();
+            } else if (var1x.getCode() == KeyCode.DOWN) {
+                var2.decreaseSpeed();
+            }
+
+        });
+        Scene var3 = new Scene(var2, 600.0, 100.0);
+        var1.setTitle("Exercise_15_29");
+        var1.setScene(var3);
+        var1.show();
+        var2.requestFocus();
+    }
+}
