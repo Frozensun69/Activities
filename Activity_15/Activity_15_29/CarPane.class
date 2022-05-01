@@ -1,0 +1,64 @@
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.scene.Node;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
+
+public class CarPane extends Pane {
+    private double x = 0.0;
+    private double y = 100.0;
+    private double radius = 5.0;
+    private Rectangle rectangle;
+    private Polygon polygon;
+    private Circle circle1;
+    private Circle circle2;
+    private Timeline animation;
+
+    CarPane() {
+        this.drawCar();
+        this.animation = new Timeline(new KeyFrame[]{new KeyFrame(Duration.millis(50.0), (var1) -> {
+            this.moveCar();
+        }, new KeyValue[0])});
+        this.animation.setCycleCount(-1);
+        this.animation.play();
+    }
+
+    private void drawCar() {
+        this.getChildren().clear();
+        this.rectangle = new Rectangle(this.x, this.y - 20.0, 50.0, 10.0);
+        this.polygon = new Polygon(new double[]{this.x + 10.0, this.y - 20.0, this.x + 20.0, this.y - 30.0, this.x + 30.0, this.y - 30.0, this.x + 40.0, this.y - 20.0});
+        this.circle1 = new Circle(this.x + 15.0, this.y - 5.0, this.radius);
+        this.circle2 = new Circle(this.x + 35.0, this.y - 5.0, this.radius);
+        this.getChildren().addAll(new Node[]{this.rectangle, this.circle1, this.circle2, this.polygon});
+    }
+
+    public void pause() {
+        this.animation.pause();
+    }
+
+    public void play() {
+        this.animation.play();
+    }
+
+    public void increaseSpeed() {
+        this.animation.setRate(this.animation.getRate() + 1.0);
+    }
+
+    public void decreaseSpeed() {
+        this.animation.setRate(this.animation.getRate() > 0.0 ? this.animation.getRate() - 1.0 : 0.0);
+    }
+
+    protected void moveCar() {
+        if (this.x <= this.getWidth()) {
+            ++this.x;
+        } else {
+            this.x = 0.0;
+        }
+
+        this.drawCar();
+    }
+}
